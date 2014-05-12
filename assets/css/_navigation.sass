@@ -1,0 +1,25 @@
+nav
+	@include respond-to(medium-screens)
+		border-bottom: 2px solid $brand-color-1
+		padding-bottom: 0.8em
+
+	ul
+		@include respond-to(medium-screens)
+			text-align: right
+
+		&:after // Clearfix wg. gefloateter li
+			content: ""
+			display: table
+			clear: both
+
+	li
+		@include respond-to(medium-screens)
+			display: inline-block
+			margin-left: 1em
+			margin-top: 1em
+
+			&:first-child
+				float: left
+				margin: 0
+
+	
