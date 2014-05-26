@@ -5,6 +5,10 @@ body
 nav
 	font-weight: 500
 
+	@include respond-to(wide-screens)
+		font-size: 1.25em
+		font-weight: 400
+
 	h1
 		font-size: 2em
 		font-weight: 400
@@ -33,8 +37,6 @@ nav
 			font-size: 3em
 
 
-
-
 	span
 		color: $brand-color-2
 
@@ -43,13 +45,33 @@ nav
 .sec-project-hero
 	h2
 		font-weight: 400
+<<<<<<< HEAD
 		line-height: 1.1
 		font-size: 2.5em
+=======
+		line-height: 1.3
+		font-size: 2em
+>>>>>>> FETCH_HEAD
 		@include respond-to(medium-screens)
 			color: #fff
+			position: absolute
+			top: 50%
+			left: 5%
+			z-index: 200
+			height: 80px
+			width: 500px
+			margin: -40px 0 0 0
+		@include respond-to(wide-screens)
+			font-size: 2.5em
+			width: $max-width
+
 
 		span
 			display: block
 			font-style: italic
 			font-size: 0.6em
+
+
+
+
 
