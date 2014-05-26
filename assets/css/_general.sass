@@ -3,12 +3,19 @@ html
 
 body
 	height: 100%
-	border: 0.7em solid #fff
+	border: $outside-border solid #fff
 
 *, *:before, *:after
 	webkit-box-sizing: border-box
 	moz-box-sizing: border-box
 	box-sizing: border-box
+
+main
+	@include respond-to(medium-screens)
+		margin-top: 3.9em // damit Inhalt unterhalb position:absolute nav beginnt
+
+	@include respond-to(wide-screens)
+		margin-top: 4.5em // damit Inhalt unterhalb position:absolute nav beginnt
 
 .wrapper
 	max-width: $max-width

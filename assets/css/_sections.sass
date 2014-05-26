@@ -11,22 +11,26 @@
 	@include respond-to(medium-screens)
 		position: relative
 
+	img
+		width: 100%
+
+
+.sec-image-block
+	margin: $outside-border 0
+	@include grid(0)
+
+	@include respond-to(wide-screens)
+		@include grid($outside-border)
 
 	img
 		width: 100%
-		@include respond-to(medium-screens)
 
-	h2
-		@include respond-to(medium-screens)
-			position: absolute
-			z-index: 200
-			margin: 0 auto
-			padding-top: 30%
-			padding-left: 5%
-			max-width: $max-width
-
+	> div
 		@include respond-to(wide-screens)
-			padding-left: 0
-	
+			@include col-1-2
 
-		
+
+
+footer
+	background-color: $brand-color-3
+	margin-bottom: $outside-border
