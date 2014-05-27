@@ -1,4 +1,5 @@
 @mixin grid($gutter:0.25rem)
+	margin: $gutter $gutter/2*-1
 
 	// The clearfix
 	&:after
@@ -9,15 +10,7 @@
 	// Add the gutter and float the columns left
 	& > *
 		float: left
-		padding-bottom: $gutter
-
-	// only the odd elements get half oft the gutter right
-	& > *:nth-child(odd)
-		padding-right: $gutter/2
-
-	// only the even elements get half oft the gutter left
-	& > *:nth-child(even)
-		padding-left: $gutter/2
+		padding: $gutter/2
 
 
 @mixin col-1-1

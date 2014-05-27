@@ -16,19 +16,16 @@
 
 
 .sec-image-block
-	margin: $outside-border 0
-	@include grid(0)
-
-	@include respond-to(wide-screens)
-		@include grid($outside-border)
+	@include grid($outside-border)
 
 	img
 		width: 100%
 
 	> div
+		@include col-1-1
+		
 		@include respond-to(wide-screens)
 			@include col-1-2
-
 
 
 footer
