@@ -2,6 +2,34 @@ nav
 	a:link, a:visited
 		color: $brand-color-1
 		text-decoration: none
+		border: none
+
+		&.current
+			color: $brand-color-2
 
 	a:hover
 		color: $brand-color-2
+
+footer
+	a:link, a:visited
+		border: none
+
+a:link, a:visited
+	text-decoration: none
+	color: inherit
+	border-bottom: $brand-color-2 3px solid
+	padding-bottom: 0px
+	transition: all 0.3s ease
+
+a:hover 
+	color: $brand-color-2
+	border-bottom-color: #fff
+
+a:active, a:focus
+	background-color: $brand-color-2
+	color: #fff
+	border-bottom: inherit
+
+.current
+	color: $brand-color-2
+

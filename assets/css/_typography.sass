@@ -1,8 +1,37 @@
+
+
 body
-	font-family: "ff-more-web-pro", Times, "Times New Roman", serif
+	font-family: "ff-more-web-pro", "More Pro", Times, "Times New Roman", serif
 	font-weight: 400
 
-nav
+::selection
+	background: $brand-color-2
+	color: #fff
+
+h2
+	font-size: 1.4em
+	font-weight: 500
+	margin: 2.5em 0 0.5em
+
+h3
+	font-size: 1.2em
+	margin: 2em 0 0.5em
+
+p
+	line-height: 1.5
+	font-size: 1em
+
+	max-width: 40em
+	@include respond-to(medium-screens)
+		line-height: 1.6
+		font-size: 1.1em
+
+	@include respond-to(wide-screens)
+		line-height: 1.7
+		font-size: 1.25em
+
+
+.nav-main
 	font-weight: 500
 
 	@include respond-to(wide-screens)
@@ -16,6 +45,60 @@ nav
 
 	span
 		color: $brand-color-2
+
+
+
+// ##############
+// ### LISTEN ###
+// ##############
+
+main
+	ul
+		list-style: none
+		padding-left: 0.75em
+
+	li
+		margin-bottom: 0.5em
+
+	li:before
+		content: "+"
+		color: $brand-color-2
+		margin: 0 0.25em 0 -0.7em
+
+
+.credits
+	padding: 0
+
+	li:before
+		content: none
+
+
+// ################
+// ### SECTIONS ###
+// ################
+
+footer
+	font-weight: 500
+
+	span
+		color: $brand-color-2
+
+	ul
+		list-style: none
+		margin: 0
+		padding: 0
+
+	li
+		display: inline-block
+		margin-right: 0.5em
+
+		&:last-child
+			margin-right: 0
+
+	nav
+		@include respond-to(medium-screens)
+			text-align: right
+
 
 .coming-soon
 	h1
@@ -44,9 +127,13 @@ nav
 
 .sec-project-hero
 	h2
+		margin-top: 0
 		font-weight: 400
 		line-height: 1.3
 		font-size: 2em
+
+		@include respond-to(handhelds)
+			margin-bottom: 0.75em
 
 		@include respond-to(medium-screens)
 			color: #fff
@@ -67,9 +154,14 @@ nav
 			font-style: italic
 			font-size: 0.6em
 
+
 .sec-project-descr
+	@include respond-to(medium-screens)
+		margin: 4em 0
 
 
-
+.sec-project-details
+	h3
+		font-weight: 500
 
 

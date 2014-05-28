@@ -23,11 +23,29 @@
 
 	> div
 		@include col-1-1
-		
+
 		@include respond-to(wide-screens)
 			@include col-1-2
 
 
+.sec-project-details
+
+	@include respond-to(medium-screens)
+		@include grid($outside-border)
+		
+		> div
+			@include col-1-2
+
 footer
-	background-color: $brand-color-3
-	margin-bottom: $outside-border
+	border-top: 2px solid $brand-color-1
+	padding: 1em 0 $outside-border
+
+	@include respond-to(handhelds)
+		> div
+			margin-bottom: 0.5em
+
+	@include respond-to(medium-screens)
+		@include grid(0)
+		
+		> div
+			@include col-1-2
