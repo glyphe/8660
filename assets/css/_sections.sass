@@ -7,13 +7,40 @@
 	height: 100%
 	padding: 2em
 
+
+.sec-home-intro
+	background-color: $brand-color-4
+	padding: $inner-distance
+
+	@include respond-to(medium-screens)
+		height: 115% // 115%-pfusch damit irgendwie die header-Höhe auch ergänzt wird
+		display: -webkit-flex
+		display: flex
+		background-image: url(home-stairs)
+		background-repeat: no-repeat
+		background-size: 100%
+		background-position: bottom
+
+		> div
+			margin: auto 0 // vertikal mit flexbox zentriert
+
+
+.sec-home-about
+	@include img-full-width
+
+	@include respond-to(medium-screens)
+		position: relative
+
+
+
+
+
 .sec-project-hero
 	@include respond-to(medium-screens)
 		position: relative
 
 	img
 		width: 100%
-
 
 .sec-image-block
 	@include grid($outside-border)
@@ -26,7 +53,6 @@
 
 		@include respond-to(wide-screens)
 			@include col-1-2
-
 
 .sec-project-details
 
