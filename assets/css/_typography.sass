@@ -1,12 +1,23 @@
+@mixin text-on-img
+	color: #fff
+	text-shadow: 1px 1px 5px #000
+
 body
 	font-family: "ff-more-web-pro", "More Pro", Times, "Times New Roman", serif
 	font-weight: 400
+
+	@include respond-to(medium-screens)
+		font-size: 1.1em
+
+	@include respond-to(wide-screens)
+		font-size: 1.2em
 
 ::selection
 	background: $brand-color-2
 	color: #fff
 
 h1
+	font-size: 2.2em
 	font-weight: 400
 	line-height: 1.3
 
@@ -15,36 +26,30 @@ h1
 
 h2
 	font-size: 1.4em
+	line-height: 1.4
 	font-weight: 500
-	margin: 2.5em 0 0.5em
+	margin: 2em 0 0.5em
 
 h3
-	font-size: 1.2em
+	font-size: 1em
 	margin: 2em 0 0.5em
 
 p
-	line-height: 1.5
-	font-size: 1em
+	line-height: 1.7
+	margin: 0.5em 0
 
 	max-width: 40em
-	@include respond-to(medium-screens)
-		line-height: 1.6
-		font-size: 1.1em
-
-	@include respond-to(wide-screens)
-		line-height: 1.7
-		font-size: 1.25em
 
 
 .nav-main
 	font-weight: 500
+	font-size: 1.1em
 
 	@include respond-to(wide-screens)
-		font-size: 1.25em
 		font-weight: 400
 
 	h1
-		font-size: 2em
+		font-size: 1.8em
 		font-weight: 400
 		margin: 0
 
@@ -70,6 +75,23 @@ main
 		color: $brand-color-2
 		margin: 0 0.25em 0 -0.7em
 
+.leistungen
+	padding: 0
+	margin-top: 0
+
+	li
+		display: inline-block
+		margin: 0
+
+	li:before
+		content: none
+
+	li:after
+		content: " /"
+		color: $brand-color-3
+
+	li:last-child:after
+		content: none
 
 .credits
 	padding: 0
@@ -84,6 +106,7 @@ main
 
 footer
 	font-weight: 500
+	margin-top: 3em
 
 	span
 		color: $brand-color-2
@@ -131,8 +154,27 @@ footer
 
 .sec-home-intro
 	@include respond-to(medium-screens)
-		font-size: 1.2em
+		font-size: 1.1em
 
+
+.sec-home-about
+	h2
+		@include respond-to(medium-screens)
+			// Text Über Bild
+			position: absolute
+			bottom: 15%
+			width: 100%
+			text-align: center
+			font-weight: 400
+			font-size: 1.5em
+			@include text-on-img
+
+		@include respond-to(wide-screens)
+			font-size: 1.8em
+
+	p
+		@include respond-to(medium-screens)
+		margin: 1em auto
 
 .sec-project-hero
 	h2
@@ -145,19 +187,17 @@ footer
 			margin-bottom: 0.75em
 
 		@include respond-to(medium-screens)
-			color: #fff
+			@include text-on-img
 			position: absolute
 			top: 50%
 			left: $inner-distance
 			z-index: 200
 			height: 80px
 			width: 500px
-			margin: -40px 0 0 0
 		@include respond-to(wide-screens)
 			font-size: 2.5em
 			width: $max-width
-
-
+ 
 	span
 		display: block
 		font-style: italic
@@ -165,8 +205,7 @@ footer
 
 
 .sec-project-descr
-	@include respond-to(medium-screens)
-		margin: 4em 0
+	margin-bottom: 3em
 
 
 .sec-project-details

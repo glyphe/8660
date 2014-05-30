@@ -1,0 +1,27 @@
+.btn
+	display: inline-block
+	margin: 0.2em 0.5em 0.2em 0
+
+	&:link, &:visited
+		background-color: $brand-color-4
+		border: 0
+		padding: 0.4em 0.8em 0.2em
+
+	&:hover
+		background-color: $brand-color-3
+		color: $brand-color-1
+
+	&:active, &:focus
+		border-color: $brand-color-1
+		background-color: $brand-color-1
+		color: #fff
+
+.btn-action
+	@extend .btn
+
+	&:link, &:visited
+		background-color: lighten($brand-color-2,20%)
+		color: #fff
+
+	&:hover, &:active, &:focus
+		background-color: $brand-color-2

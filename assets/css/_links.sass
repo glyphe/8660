@@ -3,12 +3,14 @@ nav
 		color: $brand-color-1
 		text-decoration: none
 		border: none
+		transition: all 0.3s ease-in-out
 
 		&.current
 			color: $brand-color-2
 
-	a:hover
+	a:hover, a:active
 		color: $brand-color-2
+		background-color: inherit
 
 footer
 	a:link, a:visited
@@ -19,7 +21,7 @@ a:link, a:visited
 	color: inherit
 	border-bottom: $brand-color-2 3px solid
 	padding-bottom: 0px
-	transition: all 0.3s ease
+	transition: background-color 0.3s ease-in-out
 
 a:hover 
 	color: $brand-color-2

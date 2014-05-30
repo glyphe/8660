@@ -26,10 +26,17 @@
 
 
 .sec-home-about
+
 	@include img-full-width
 
 	@include respond-to(medium-screens)
 		position: relative
+
+	> div:first-child
+		position: relative
+
+	> div:last-child
+		padding: 0 $inner-distance
 
 
 
@@ -41,6 +48,22 @@
 
 	img
 		width: 100%
+
+.sec-project-overview
+	@include grid($outside-border)
+
+	img
+		width: 100%
+
+	> div
+		@include col-1-1
+
+		@include respond-to(medium-screens)
+			@include col-1-2
+
+		@include respond-to(wide-screens)
+			@include col-1-3
+
 
 .sec-image-block
 	@include grid($outside-border)
@@ -54,13 +77,6 @@
 		@include respond-to(wide-screens)
 			@include col-1-2
 
-.sec-project-details
-
-	@include respond-to(medium-screens)
-		@include grid($outside-border)
-		
-		> div
-			@include col-1-2
 
 footer
 	border-top: 2px solid $brand-color-1
