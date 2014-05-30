@@ -1,7 +1,11 @@
 header
 	padding-top: $outside-border
 
+	@include respond-to(handhelds)
+		margin-bottom: 1.5em
+
 	@include respond-to(medium-screens)
+		background-color: #fff
 		border: $outside-border solid #fff 
 		border-bottom: 0
 		position: fixed
@@ -12,22 +16,18 @@ header
 		height: $header-height
 		transition: all 0.3s ease-in-out
 
+
 		li:first-child
 			display: none	// blendet Logo initial aus
-
-		ul
-			right: $outside-border // positioniert Nav nicht ganz rechts am rand
 
 
 // Was passiert, wenn der Header verschwindet
 .header-up
-	background-color: #fff
 	top: $header-height*-1
 
 
 // Was passiert, wenn der Header erscheint
 .header-down
-	background-color: #fff
 
 	li:first-child
 		display: inherit // blendet Logo wieder ein
@@ -51,7 +51,7 @@ header
 		@include respond-to(medium-screens)
 			position: absolute
 			bottom: 0
-			right: $outside-border
+			right: 0
 			left: 0
 			transition: all 0.2s ease-in-out 0.2s
 			text-align: right
