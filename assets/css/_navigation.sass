@@ -17,25 +17,14 @@ header
 		transition: all 0.3s ease-in-out
 
 
-		li:first-child
-			display: none	// blendet Logo initial aus
-
-
 // Was passiert, wenn der Header verschwindet
 .header-up
 	top: $header-height*-1
 
-
-// Was passiert, wenn der Header erscheint
-.header-down
-
-	li:first-child
-		display: inherit // blendet Logo wieder ein
-
-
 .header-up, .header-down
 	.nav-main
-		border-bottom: 2px solid $brand-color-1
+		// border-bottom: 2px solid $brand-color-3
+		box-shadow: 0 4px 4px -4px rgba(0,0,0,0.5)
 
 		ul
 			right: 0

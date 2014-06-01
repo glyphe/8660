@@ -22,21 +22,21 @@
 		background-position: bottom
 
 		> div
-			margin: auto 0 // vertikal mit flexbox zentriert
+			@extend .wrapper-text
+			margin: auto // vertikal mit flexbox zentriert
 
 
 .sec-home-about
-
 	@include img-full-width
 
 	@include respond-to(medium-screens)
 		position: relative
 
-		> div:first-child
-			position: relative
-
-		> div:last-child
-			padding: 0 $inner-distance
+		> div
+			position: absolute
+			bottom: 10%
+			left: $inner-distance
+			width: 100%-$inner-distance
 
 
 
@@ -46,6 +46,10 @@
 
 	img
 		width: 100%
+
+
+.sec-project-descr
+	@extend .wrapper-text
 
 .sec-project-overview
 	@include img-full-width
@@ -133,6 +137,15 @@
 		p, h2
 			margin-right: 1em
 		
+.sec-text-intro
+	background-color: $brand-color-4
+	padding: $inner-distance
+	min-height: 100%
+
+	> div
+		@extend .wrapper-text
+		@include respond-to(medium-screens)
+			margin-top: 5em
 
 
 footer

@@ -39,7 +39,7 @@ p
 	line-height: 1.7
 	margin: 0.5em 0
 
-	max-width: 40em
+	max-width: $max-width-text
 
 
 .nav-main
@@ -161,11 +161,6 @@ footer
 .sec-home-about
 	h2
 		@include respond-to(medium-screens)
-			// Text Über Bild
-			position: absolute
-			bottom: 15%
-			width: 100%
-			text-align: center
 			font-weight: 400
 			font-size: 1.5em
 			@include text-on-img
@@ -173,9 +168,12 @@ footer
 		@include respond-to(wide-screens)
 			font-size: 1.8em
 
+		span
+			color: $brand-color-2
+
 	p
 		@include respond-to(medium-screens)
-			margin: 1em auto
+			@include text-on-img
 
 
 .thumb-text
