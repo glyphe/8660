@@ -2,35 +2,16 @@ html
 	height: 100%
 
 body
-	height: 100%
-	border: $outside-border solid #fff
-	border-top: 0
+	background-color: $brand-color-4
+	padding: $outside-border
 
-	@include respond-to(medium-screens)
-		padding-top: $header-height
-
-		// &:before // erzeugt Border am unteren Browserrand
-		// 	content: ""
-		// 	position: fixed
-		// 	left: 0
-		// 	right: 0
-		// 	bottom: 0
-		// 	height: $outside-border
-		// 	background: #fff
-		// 	z-index: 999
-
+	@include respond-to(handhelds)
+		padding: $outside-border-handhelds
+	
 *, *:before, *:after
 	webkit-box-sizing: border-box
 	moz-box-sizing: border-box
 	box-sizing: border-box
 
-main
-	@include respond-to(medium-screens)
-		margin-top: $header-height*-1 // damit Hintergrund des Seiteninhalts hinter header ist
-
-		> *:first-child
-			padding-top: $header-height  // damit Content des ersten Elements nicht hinter haeader ist
-
 .wrapper-text
 	max-width: $max-width-text
-	margin: 0 auto

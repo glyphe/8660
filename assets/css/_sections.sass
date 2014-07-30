@@ -1,3 +1,12 @@
+main
+	background-color: #fff
+	padding-bottom: 3em
+
+section
+	margin-left: $inner-distance
+	margin-right: $inner-distance
+
+
 .coming-soon
 	background-color: #bbb
 	background-image: url('heads')
@@ -10,20 +19,23 @@
 
 .sec-home-intro
 	background-color: $brand-color-4
-	padding: $inner-distance
+	margin: 0
 
 	@include respond-to(medium-screens)
-		height: 115% // 115%-pfusch damit irgendwie die header-Höhe auch ergänzt wird
-		display: -webkit-flex
-		display: flex
-		background-image: url(home-stairs)
+		background-image: url(home-team-right)
 		background-repeat: no-repeat
 		background-size: 100%
-		background-position: bottom
+		background-position: top
+		min-height: 100%
 
-		> div
-			@extend .wrapper-text
-			margin: auto // vertikal mit flexbox zentriert
+	> div
+		@extend .wrapper-text
+		margin: 0 $inner-distance
+		padding-top: 20%
+
+
+
+
 
 
 .sec-home-about
@@ -41,6 +53,7 @@
 
 
 .sec-project-hero
+	margin: 0
 	@include respond-to(medium-screens)
 		position: relative
 
@@ -110,15 +123,21 @@
 
 
 .sec-image-block
-	@include grid($outside-border)
+
+	margin: $inner-distance
+	@extend .wrapper-text
 
 	@include img-full-width
-
 	> div
-		@include col-1-1
+		margin: $outside-border 0
 
-		@include respond-to(medium-screens)
-			@include col-1-2
+	// GRID
+	// @include grid($outside-border)
+	// > div
+	// 	@include col-1-1
+
+	// 	@include respond-to(medium-screens)
+	// 		@include col-1-2
 
 
 .sec-about-us
@@ -138,26 +157,18 @@
 			margin-right: 1em
 		
 .sec-text-intro
-	background-color: $brand-color-4
-	padding: $inner-distance
-	min-height: 100%
-
 	> div
 		@extend .wrapper-text
 		@include respond-to(medium-screens)
-			margin-top: 5em
+			padding-top: 5em
 
 .img-big
 	width: 100%
 	margin: -5em 0
 
 footer
-	border-top: 2px solid $brand-color-1
-	padding: 1em 0 $outside-border
-
-	@include respond-to(handhelds)
-		> div
-			margin-bottom: 0.5em
+	background-color: $background-color
+	padding: 1em $inner-distance $outside-border
 
 	@include respond-to(medium-screens)
 		@include grid(0)
