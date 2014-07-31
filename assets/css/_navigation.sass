@@ -1,45 +1,34 @@
 header
-	@include respond-to(handhelds)
-		background-color: $background-color
+	// fixer Rahmen oben
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	border-top: $outside-border-handhelds solid $brand-color-4
+	z-index: 999
 
 	@include respond-to(medium-screens)
-		transition: background-color 0.3s ease-in
-		height: $header-height
-		position: fixed
-		top: 0
-		left: 0
-		right: 0
-		width: 100%
-		z-index: 999
-		border-top: $outside-border solid $brand-color-4
-		height: $header-height
-		padding: $outside-border
-
-		&:hover
-			background-color: $brand-color-4
-
-// Was passiert, wenn der Header verschwindet
-// .header-up
-// 	top: $header-height*-1
-
-// .header-up, .header-down
-// 	.nav-main
-// 		// border-bottom: 2px solid $brand-color-3
-// 		box-shadow: 0 4px 4px -4px rgba(0,0,0,0.5)
-
-// 		ul
-// 			right: 0
+		border-top-width: $outside-border
 
 
 header nav
-	@include respond-to(medium-screens)
-		margin-top: $outside-border*-1
-		position: fixed
-		width: 100%
-		height: auto
-
-	font-weight: 500
 	font-size: 1.1em
+	font-weight: 500
+	@include respond-to(wide-screens)
+		font-weight: 400
+
+	@include respond-to(medium-screens)
+		position: fixed
+		top: $outside-border
+		left: $outside-border
+		right: $outside-border
+		z-index: 900
+		height: $header-height
+		padding-top: $outside-border
+		// transition: background-color 0.5s ease-in
+
+		// &:hover
+		// 	background-color: rgba($background-color,0.9)
 
 	span
 		color: $brand-color-2
@@ -47,14 +36,11 @@ header nav
 	> div
 		margin: 0 $inner-distance
 
-	@include respond-to(wide-screens)
-		font-weight: 400
-
 	ul
-		padding: $outside-border 0
+		padding: $outside-border-handhelds 0
 
 		@include respond-to(medium-screens)
-			padding: ($outside-border*1.8) 0		
+			padding: $outside-border 0		
 
 	li
 		@include respond-to(medium-screens)
@@ -62,13 +48,49 @@ header nav
 			margin-right: 0.7em
 
 
-.sticky
-	display: inherit
+.nav-main
+	@include respond-to(handhelds)
+		display: none  // blendet bei Handhelds Navi zuerst aus
+		background-color: $brand-color-4
+		padding-top: 2.5em // Damit Navi nicht hinter absolut positionierter nav-collapsed ist
+		margin: 0 $outside-border-handhelds
+		box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.5)
+		border-bottom: $outside-border-handhelds solid $brand-color-4
 
 .nav-collapsed
-	display: none
+	@include respond-to(medium-screens)
+		display: none
+		top: $outside-border
+		// background-color: rgba($background-color,0.3)
 
-	a:after
+	@include respond-to(handhelds)
+		position: fixed // Fixe Position bei Handhelds für den Menü-Button
+		top: $outside-border-handhelds
+		left: $outside-border-handhelds
+		right: $outside-border-handhelds
+		z-index: 999
+		padding: 0 0 $outside-border-handhelds 0
+		// background-color: rgba($background-color,0.95)
+		height: 45px
+
+	a, a:hover
+		display: inline-block
+		margin: -0.2em -0.5em -0.3em 0
+		padding: 0.2em 0.5em 0em
+		background-color: rgba($background-color,0.8)
+
+
+	a:after	// Symbol nach dem Logo
 		@extend .fa-css-prefix
-		content: $fa-var-bars
 		margin-left: 0.4em
+
+		@include respond-to(handhelds)
+			content: $fa-var-bars
+
+		@include respond-to(medium-screens)
+			content: $fa-var-chevron-circle-up
+			font-size: 0.9em
+
+
+
+

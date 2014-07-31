@@ -1,6 +1,9 @@
 main
 	background-color: #fff
-	padding-bottom: 3em
+	padding: $header-height 0 5em
+
+	@include respond-to(handhelds)
+		padding-top: 3em // Damit Navi-Link über dem ersten Inhalt steht
 
 section
 	margin-left: $inner-distance
@@ -53,8 +56,9 @@ section
 
 
 .sec-project-hero
-	margin: 0
+
 	@include respond-to(medium-screens)
+		margin: $header-height*-1 0 0 0 // Damit Bild hinter Navigation ist
 		position: relative
 
 	img
@@ -66,32 +70,34 @@ section
 
 .sec-project-overview
 	@include img-full-width
+	@extend .wrapper-text
 
-	@include grid($outside-border)
 	> div
-		@include col-1-1
+		margin: 2em 0
 
-		@include respond-to(medium-screens)
-			@include col-1-2
+	// @include grid()
+	// margin-left: $inner-distance
+	// margin-right: $inner-distance
 
-		@include respond-to(wide-screens)
-			@include col-1-3
+	// > div
+	// 	@include col-1-1
+
+	// 	@include respond-to(wide-screens)
+	// 		@include col-1-2
 
 	.thumb-text
-		@include respond-to(medium-screens)
-			opacity: 0
-			position: absolute
-			top: 0
-			left: 0
-			right: 0
-			bottom: 0
-			background-color: rgba(255,255,255,0.7)
-			transition: opacity 0.3s ease-in-out
-			display: -webkit-flex
-			display: flex
+		opacity: 1
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		transition: background-color 0.3s ease-in-out
+		display: -webkit-flex
+		display: flex
 
-			&:hover
-				opacity: 1
+		&:hover
+			background-color: rgba($brand-color-2,0.3)
 
 .thumb-box
 	position: relative
@@ -147,11 +153,11 @@ section
 		> div
 			margin-bottom: 3em
 
-	@include respond-to(medium-screens)
-		@include grid(0)
-		margin: 3em 0
-		> div
-			@include col-1-2
+	// @include respond-to(medium-screens)
+	// 	@include grid(0)
+	// 	margin: 3em 0
+	// 	> div
+	// 		@include col-1-2
 
 		p, h2
 			margin-right: 1em
@@ -159,8 +165,6 @@ section
 .sec-text-intro
 	> div
 		@extend .wrapper-text
-		@include respond-to(medium-screens)
-			padding-top: 5em
 
 .img-big
 	width: 100%
