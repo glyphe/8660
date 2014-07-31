@@ -70,14 +70,16 @@ header nav
 		right: $outside-border-handhelds
 		z-index: 999
 		padding: 0 0 $outside-border-handhelds 0
-		// background-color: rgba($background-color,0.95)
 		height: 45px
 
 	a, a:hover
 		display: inline-block
 		margin: -0.2em -0.5em -0.3em 0
-		padding: 0.2em 0.5em 0em
-		background-color: rgba($background-color,0.8)
+		padding: 0.1em 0.5em 0em
+		background-color: rgba($brand-color-4,0.95)
+
+		@include respond-to(handhelds)
+			margin-left: -0.5em // Damit der Button weiter links ist am Handy
 
 
 	a:after	// Symbol nach dem Logo
