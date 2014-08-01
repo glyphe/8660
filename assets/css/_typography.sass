@@ -135,8 +135,8 @@ footer
 
 
 .sec-home-intro
-	@include respond-to(medium-screens)
-		font-size: 1.1em
+	@include respond-to(wide-screens)
+		font-size: 1.2em
 
 
 .sec-home-about
@@ -221,7 +221,7 @@ footer
 		@include respond-to(medium-screens)
 			@include text-on-img
 			position: absolute
-			top: 50%
+			bottom: $inner-distance
 			left: $inner-distance
 			z-index: 200
 			height: 80px
@@ -238,7 +238,7 @@ footer
 
 
 .sec-project-descr
-	margin-bottom: 3em
+	margin-top: $inner-distance
 
 
 .sec-project-details

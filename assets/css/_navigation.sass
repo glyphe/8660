@@ -1,5 +1,5 @@
-header
-	// fixer Rahmen oben
+header:after // fixer Rahmen oben
+	content: ""
 	position: fixed
 	top: 0
 	left: 0
@@ -25,10 +25,6 @@ header nav
 		z-index: 900
 		height: $header-height
 		padding-top: $outside-border
-		// transition: background-color 0.5s ease-in
-
-		// &:hover
-		// 	background-color: rgba($background-color,0.9)
 
 	span
 		color: $brand-color-2
@@ -53,9 +49,12 @@ header nav
 		display: none  // blendet bei Handhelds Navi zuerst aus
 		background-color: $brand-color-4
 		padding-top: 2.5em // Damit Navi nicht hinter absolut positionierter nav-collapsed ist
-		margin: 0 $outside-border-handhelds
+		margin: 0
 		box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.5)
 		border-bottom: $outside-border-handhelds solid $brand-color-4
+
+	@include respond-to(medium-screens)
+		position: absolute
 
 .nav-collapsed
 	@include respond-to(medium-screens)

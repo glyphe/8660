@@ -14,11 +14,11 @@ $(function() {
 		$(document).scroll(function () {
 		    var y = $(this).scrollTop();
 		    if (y > 117) {
-		        $('.nav-main').fadeOut(600);
+		        // $('.nav-main').fadeOut(600);
 		        $('.nav-collapsed').fadeIn(600);
 		    } else {
-		        $('.nav-collapsed').fadeOut(600);
-		        $('.nav-main').fadeIn(600);
+		        $('.nav-collapsed').fadeOut(600).delay(50);
+		        // $('.nav-main').fadeIn(600);
 		    }
 		});
 

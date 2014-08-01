@@ -3,7 +3,7 @@ main
 	padding: $header-height 0 5em
 
 	@include respond-to(handhelds)
-		padding-top: 3em // Damit Navi-Link über dem ersten Inhalt steht
+		padding-top: 1em // Damit Navi-Link über dem ersten Inhalt steht
 
 section
 	margin-left: $inner-distance
@@ -21,36 +21,54 @@ section
 
 
 .sec-home-intro
-	background-color: $brand-color-4
-	margin: 0
 
 	@include respond-to(medium-screens)
-		// background-image: url(home-team-right)
-		background-repeat: no-repeat
+		@include behind-header
+		min-height: 95% // damit nachfolgendes Bild oben angeschnitten ist
+		background: url('home-team-top-2') no-repeat
+		background-size: 100%
+		background-position: bottom
+		display: -webkit-flex
+
+		> div
+			@extend .wrapper-text
+			margin: auto $inner-distance
+
+
+.sec-leistungen-intro
+	@extend .sec-home-intro
+
+	@include respond-to(medium-screens)
+		background: url('leistungen-top') no-repeat
+		background-size: 100%
+		background-position: bottom
+
+.sec-leistungen-text
+	@include sec-full-width
+
+	@include respond-to(medium-screens)
+		@include sec-full-width
+		background: url('leistungen-haende') no-repeat
 		background-size: 100%
 		background-position: top
-		min-height: 100%
+		display: -webkit-flex
 
-	> div
-		@extend .wrapper-text
-		margin: 0 $inner-distance
-		padding-top: 20%
-
-
-
-
+		> div
+			margin-left: $inner-distance
+			max-width: 40%
 
 
 .sec-home-about
 	@include img-full-width
+	@include sec-full-width // reset des Außenabstandes damit Bild auf Volle Breite geht
 
 	@include respond-to(medium-screens)
 		position: relative
 
 		> div
 			position: absolute
-			bottom: 10%
 			left: $inner-distance
+			bottom: $inner-distance
 			width: 100%-$inner-distance
 
 
@@ -58,7 +76,7 @@ section
 .sec-project-hero
 
 	@include respond-to(medium-screens)
-		margin: $header-height*-1 0 0 0 // Damit Bild hinter Navigation ist
+		@include behind-header
 		position: relative
 
 	img
@@ -70,20 +88,26 @@ section
 
 .sec-project-overview
 	@include img-full-width
-	@extend .wrapper-text
+	// @extend .wrapper-text
 
 	> div
-		margin: 2em 0
+		margin: 0
 
-	// @include grid()
-	// margin-left: $inner-distance
-	// margin-right: $inner-distance
+	@include grid(2em)
+	margin-left: $inner-distance
+	margin-right: $inner-distance
 
-	// > div
-	// 	@include col-1-1
+	img
+		-webkit-filter: grayscale(100%) contrast(70%)
 
-	// 	@include respond-to(wide-screens)
-	// 		@include col-1-2
+	> div
+		@include col-1-1
+
+		@include respond-to(medium-screens)
+			@include col-1-1
+
+		@include respond-to(wide-screens)
+			@include col-1-2
 
 	.thumb-text
 		opacity: 1
@@ -96,8 +120,8 @@ section
 		display: -webkit-flex
 		display: flex
 
-		&:hover
-			background-color: rgba($background-color,0.3)
+		// &:hover
+		// 	background-color: rgba($background-color,0.3)
 
 .thumb-box
 	position: relative

@@ -2,7 +2,7 @@ nav
 	a:link, a:visited
 		color: $brand-color-1
 		text-decoration: none
-		border: none
+		background-image: none
 		transition: all 0.3s ease-in-out
 
 		&.current
@@ -14,23 +14,25 @@ nav
 
 footer
 	a:link, a:visited
-		border: none
+		background-image: none
 
 a:link, a:visited
 	text-decoration: none
 	color: inherit
-	border-bottom: $brand-color-2 3px solid
+	background-image: url('link-underline')
+	background-repeat: repeat-x
+	background-position: bottom
 	padding-bottom: 0px
 	transition: background-color 0.3s ease-in-out
 
 a:hover 
 	color: $brand-color-2
-	border-bottom-color: transparent
+	background-image: none
 
 a:active, a:focus
 	background-color: $brand-color-2
 	color: #fff
-	border-bottom: inherit
+	background-image: none
 
 .current
 	color: $brand-color-2
