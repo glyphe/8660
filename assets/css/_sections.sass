@@ -35,30 +35,24 @@ section
 			margin: auto $inner-distance
 
 
-.sec-leistungen-intro
-	@extend .sec-home-intro
-
+.sec-leistungen-hero
 	@include respond-to(medium-screens)
-		background: url('leistungen-top') no-repeat
+		@include sec-full-width
+		@include behind-header
+		min-height: 90%
+		background: url('leistungen-haende2') no-repeat
 		background-size: 100%
 		background-position: bottom
 
-.sec-leistungen-text
-	@include sec-full-width
-
-	@include respond-to(medium-screens)
-		@include sec-full-width
-		background: url('leistungen-haende') no-repeat
-		background-size: 100%
-		background-position: top
-		display: -webkit-flex
-
 		> div
 			margin-left: $inner-distance
+			padding-top: $header-height
+			padding-bottom: $inner-distance
+		p
 			max-width: 40%
 
 
-.sec-home-about
+.sec-home-about-img
 	@include img-full-width
 	@include sec-full-width // reset des Außenabstandes damit Bild auf Volle Breite geht
 
@@ -71,7 +65,9 @@ section
 			bottom: $inner-distance
 			width: 100%-$inner-distance
 
-
+.sec-home-about-text
+	margin-top: 2em
+	margin-bottom: 8em
 
 .sec-project-hero
 
@@ -86,45 +82,46 @@ section
 .sec-project-descr
 	@extend .wrapper-text
 
-.sec-project-overview
+.sec-project-overview, .sec-home-new-project
 	@include img-full-width
-	// @extend .wrapper-text
-
-	> div
-		margin: 0
-
 	@include grid(2em)
-	margin-left: $inner-distance
-	margin-right: $inner-distance
+	padding-left: $inner-distance // damit sich Margins nicht addieren und der Raster passt
+	padding-right: $inner-distance // damit sich Margins nicht addieren und der Raster passt
 
 	img
-		-webkit-filter: grayscale(100%) contrast(70%)
+		-webkit-filter: grayscale(1) contrast(0.7)
+		transition: -webkit-filter 0.5s ease-out, -webkit-transform 0.3s 0.2s ease-out
 
 	> div
 		@include col-1-1
 
 		@include respond-to(medium-screens)
-			@include col-1-1
-
-		@include respond-to(wide-screens)
 			@include col-1-2
 
-	.thumb-text
-		opacity: 1
-		position: absolute
-		top: 0
-		left: 0
-		right: 0
-		bottom: 0
-		transition: background-color 0.3s ease-in-out
-		display: -webkit-flex
-		display: flex
+		@include respond-to(wide-screens)
+			// @include col-1-3
 
-		// &:hover
-		// 	background-color: rgba($background-color,0.3)
+.thumb-text
+	opacity: 1
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	transition: background-color 0.3s ease-in-out
+
+	// &:hover
+	// 	background-color: rgba($background-color,0.3)
 
 .thumb-box
 	position: relative
+	overflow: hidden
+
+	&:hover
+		img
+			-webkit-filter: grayscale(0) contrast(1)
+			-webkit-transform: scale(1.07)
+
 
 
 .sec-home-new-project

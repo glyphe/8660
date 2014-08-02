@@ -16,6 +16,7 @@ footer
 	a:link, a:visited
 		background-image: none
 
+
 a:link, a:visited
 	text-decoration: none
 	color: inherit
@@ -23,11 +24,11 @@ a:link, a:visited
 	background-repeat: repeat-x
 	background-position: bottom
 	padding-bottom: 0px
-	transition: background-color 0.3s ease-in-out
+	transition: color 0.3s ease-in-out, background 0.2s ease-out 0.1s
 
 a:hover 
-	color: $brand-color-2
-	background-image: none
+	// color: $brand-color-2
+	background-position: 0 75%
 
 a:active, a:focus
 	background-color: $brand-color-2
@@ -40,3 +41,14 @@ a:active, a:focus
 	h1
 		color: $brand-color-1
 
+
+
+a[href^="tel:"]:link, a[href^="tel:"]:visited
+	@include respond-to(medium-screens)
+		background-image: none  // keine Unterstrichung der telefonnummer-Links
+
+	&:before
+		@extend .fa-css-prefix
+		@include respond-to(handhelds)
+			content: $fa-var-phone // Telefon-Icon bei Handhelds
+			margin-right: 0.2em

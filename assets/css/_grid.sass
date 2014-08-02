@@ -13,14 +13,23 @@
 		padding: $gutter/2
 
 
+@mixin grid-inline-block($gutter:0.25rem)
+	margin: $gutter $gutter/2*-1
+
+	// Add the gutter and float the columns left
+	& > *
+		display: inline-block
+		padding: $gutter/2
+
+
 @mixin col-1-1
 	width: 100%
 
 @mixin col-1-2
-	width: 50%
+	width: 49.5%
 
 @mixin col-1-3
-	width: 33.333333333%
+	width: 32.333333333%
 
 @mixin col-2-3
 	width: 66.666666666%

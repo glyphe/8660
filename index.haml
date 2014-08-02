@@ -13,35 +13,52 @@
 			%a(href="<!-- @path leistungen2 -->") Was wir für Sie tun können
 
 
-	%section.sec-home-about
+	%section.sec-home-about-img
 		%img(src="<!-- @path home-team-2 -->")
 
 		%div
-			.wrapper-text
-				%h2 Oliver Schöndorfer <span>/</span> Michael Holzer.<br>Freunde gepflegter Kommunikation.
+			%h2 Oliver Schöndorfer <span>/</span> Michael Holzer.<br>Freunde gepflegter Kommunikation.
 
-	%section		
+	%section.sec-home-about-text
 		%p
 			Wir ergänzen einander perfekt. Unsere Persönlichkeiten, gebündelten Erfahrungen und Kenntnisse ergeben eine Fülle an Möglichkeiten für verschiedenste Kunden. Wir sind extrem neugierig, was wir für Sie tun können. Welche Probleme wir für Sie lösen dürfen. Und wie wir es auch Ihren Kunden leicht machen werden, Sie ins Herz zu schließen.
 			%a(href="<!-- @path leistungen -->") Call for Action über uns
 
+	%section
+		%h2 Unser jüngsten Streiche
+
 	%section.sec-home-new-project
-		%a(href="<!-- @path projekt-ballons -->")
-			%div
+		%div
+			%a(href="<!-- @path projekt-wilddegrees -->")
 				.thumb-box
-					%img(src="<!-- @path mich_title -->")
+					%img(src="<!-- @path wilddegrees-title -->")
 					.thumb-text
-						%div
-							%p
-								Unser jüngster Streich<br>Lass mich nicht hängen
-								%span Food-Installation
+						%p
+							wild degrees
+							%span Branding & Image-Bilder
+		%div
+			%a(href="<!-- @path projekt-ballons -->")
+				.thumb-box
+					%img(src="<!-- @path ballons-thumb -->")
+					.thumb-text
+						%p
+							Lass mich nicht hängen
+							%span Food-Installation
 
-
-		%a(href="<!-- @path project-overview -->") Zum Projekt
 
 
 	%section
 		%h2 Interessiert am Kennenlernen?
-		%p Eine Tasse Kaffee mit uns verpflichtet Sie zu nichts. Rufen Sie einfach an: +43 600 81 42 150 - Anmeldung für Newsletter
+		%p Eine Tasse Kaffee mit uns verpflichtet Sie zu nichts.<br> Rufen Sie einfach an: <a href="tel:+436608142150">+43 660 81 42 150</a>.
+
+		%form(action="http://8660.us8.list-manage1.com/subscribe/post?u=727c8d8ed83edc6f76b3d5e55&amp;id=c2db0976b9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate)
+			
+			#mce-responses.clear
+			<div style="position: absolute; left: -5000px;"><input type="text" name="b_727c8d8ed83edc6f76b3d5e55_c2db0976b9" tabindex="-1" value=""></div>
+
+			.mc-field-group
+				%input(type="email" value="" name="EMAIL" placeholder="Ihre E-Mail Adresse" class="required email" id="mce-EMAIL")
+			
+				%input(type="submit" value="Newsletter bestellen" name="subscribe" id="mc-embedded-subscribe" class="button")
 
 <!-- @include footer -->

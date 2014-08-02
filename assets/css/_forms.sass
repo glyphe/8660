@@ -1,0 +1,27 @@
+input
+	font-family: "ff-more-web-pro", "More Pro", Times, "Times New Roman", serif
+	padding: 0.4em 0.8em 0.3em
+	border: 2px solid $brand-color-3
+	border-radius: none
+
+	&[type^="email"]
+		background-color: $background-color
+
+		&:focus
+			border-color: darken($brand-color-5, 20%)
+			outline: none
+
+	&[type^="submit"]
+		border-color: $brand-color-4
+		background-color: $brand-color-4
+		transition: background 0.3s ease-in-out, border 0.3s ease-in-out
+		margin-left: 0.5em
+
+		&:hover
+			background-color: darken($brand-color-5, 20%)
+			border-color: darken($brand-color-5, 20%)
+			color: #fff
+
+		&:active
+			background-color: $brand-color-2
+			border-color: $brand-color-2
