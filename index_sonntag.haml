@@ -1,29 +1,38 @@
 <!-- @include header -->
 <!-- @include nav -->
-<!-- @include sonntag -->
 
-%main
+.sonntag
+	%div
+		%h1
+			Wir sind 86<span>/</span>60.<br>
+			Und haben Sonntags geschlossen.
+		%p
+			Genießen Sie den Tag, lassen Sie es sich gut gehen.<br>Ab morgen sind wir wieder für Sie erreichbar.
+
+%main.page-home
 
 	%section.sec-home-intro
 		.div
 			%h1
 				Wir sind 86<span>/</span>60.<br>
-				Und kommen gleich zur Sache.
+				Und noch ein Subsatz.
 
 			%p Wer mit uns arbeitet, fühlt sich bald gestärkt. Bekommt ein einzigartiges Profil und wird in einer sehr bunten, lauten Welt erkannt und wahrgenommen. Dafür gestalten wir Begegnungen mit Ihnen, Ihrem Unternehmen oder Ihrer Marke einfach, beeindruckend und anziehend.
-			%a(href="<!-- @path leistungen2 -->") Was wir für Sie tun können
+			%a(href="<!-- @path leistungen -->") Was wir für Sie tun können
 
 
-	%section.sec-home-about-img
-		%img(src="<!-- @path home-team-2 -->")
+	.sec-home-about
+		%header.header-image
+			%img(src="<!-- @path home-team-handhelds -->")
+			%img(src="<!-- @path home-team -->")
 
-		%div
-			%h2 Oliver Schöndorfer <span>/</span> Michael Holzer.<br>Freunde gepflegter Kommunikation.
+			%div
+				%h2 Oliver Schöndorfer <span>/</span> Michael Holzer.<br>Freunde gepflegter Kommunikation.
 
-	%section.sec-home-about-text
-		%p
-			Wir ergänzen einander perfekt. Unsere Persönlichkeiten, gebündelten Erfahrungen und Kenntnisse ergeben eine Fülle an Möglichkeiten für verschiedenste Kunden. Wir sind extrem neugierig, was wir für Sie tun können. Welche Probleme wir für Sie lösen dürfen. Und wie wir es auch Ihren Kunden leicht machen werden, Sie ins Herz zu schließen.
-			%a(href="<!-- @path leistungen -->") Call for Action über uns
+		%section
+			%p
+				Wir ergänzen einander perfekt. Unsere Persönlichkeiten, gebündelten Erfahrungen und Kenntnisse ergeben eine Fülle an Möglichkeiten für verschiedenste Kunden. Wir sind extrem neugierig, was wir für Sie tun können. Welche Probleme wir für Sie lösen dürfen. Und wie wir es auch Ihren Kunden leicht machen werden, Sie ins Herz zu schließen.
+				%a(href="<!-- @path leistungen -->") Call for Action über uns
 
 	%section
 		%h2 Unser jüngsten Streiche
