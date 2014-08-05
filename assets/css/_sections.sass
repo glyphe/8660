@@ -34,7 +34,7 @@ section
 		display: -webkit-flex
 
 		> div
-			@extend .wrapper-text
+			max-width: $max-width-text
 			margin: auto $inner-distance
 
 
@@ -70,17 +70,22 @@ section
 
 
 .sec-project-descr
-	@extend .wrapper-text
+	max-width: $max-width-text
 
-.sec-project-overview, .sec-home-new-project
+.sec-project-overview
+	@extend .portfolio-grid
+
+
+
+//##########################
+//### PORTFOLIO OVERVIEW ###
+//##########################
+
+.portfolio-grid
 	@include img-full-width
 	@include grid(2em)
 	padding-left: $inner-distance // damit sich Margins nicht addieren und der Raster passt
 	padding-right: $inner-distance // damit sich Margins nicht addieren und der Raster passt
-
-	img
-		-webkit-filter: grayscale(1) contrast(0.7)
-		transition: -webkit-filter 0.5s ease-out, -webkit-transform 0.3s 0.2s ease-out
 
 	> div
 		@include col-1-1
@@ -89,70 +94,81 @@ section
 			@include col-1-2
 
 
-.thumb-text
-	opacity: 1
-	position: absolute
-	top: 0
-	left: 0
-	right: 0
-	bottom: 0
-	transition: background-color 0.3s ease-in-out
-
-	// &:hover
-	// 	background-color: rgba($background-color,0.3)
-
 .thumb-box
 	position: relative
 	overflow: hidden
+
+	img
+		-webkit-filter: grayscale(1) contrast(0.7)
+		transition: -webkit-filter 0.5s ease-out, -webkit-transform 0.3s 0.2s ease-out
 
 	&:hover
 		img
 			-webkit-filter: grayscale(0) contrast(1)
 			-webkit-transform: scale(1.07)
 
+		.thumb-subtitle
+			background-color: $background-color
+
+
+.thumb-text
+	margin: 0 1em 0 0
+	position: absolute
+	bottom: 8%
+	left: 5%
+
+
+.thumb-title
+	@include text-on-img
+	font-size: 1.5em
+	line-height: 1.1
+
+
+.thumb-subtitle
+	display: inline-block
+	margin: 0.2em 0 0 0
+	padding: 0.2em 0.6em 0.1em	
+	font-size: 0.75em
+	color: $brand-color-1
+	background-color: rgba($background-color, 0.7)
+	transition: background-color 0.5s ease-out
+
+
 
 
 .sec-home-new-project
-	@include img-full-width
-
-	.thumb-text
-		@include respond-to(medium-screens)
-			position: absolute
-			top: 0
-			left: 0
-			right: 0
-			bottom: 0
-			display: -webkit-flex
-			display: flex
-
-		> div
-			background-color: rgba(255,255,255,0.85)
-			margin: auto
-			padding: $outside-border
-			transition: background-color 0.3s ease-in-out
-
-			&:hover
-				background-color: rgba(255,255,255,0.95)
+	margin-top: 5em
+	margin-bottom: 5em
+	> div
+		@extend .portfolio-grid
 
 
 
 
 .sec-image-block
-
-	margin: $inner-distance
-	@extend .wrapper-text
-
 	@include img-full-width
-	> div
-		margin: $outside-border 0
+	margin: $inner-distance
 
-	// GRID
-	// @include grid($outside-border)
-	// > div
-	// 	@include col-1-1
+	img
+		display: inline-block
+		margin: 0 0 2em
 
-	// 	@include respond-to(medium-screens)
-	// 		@include col-1-2
+		@include respond-to(wide-screens)
+			float: left
+			width: 80%
+
+	figcaption
+		line-height: 1.3
+		font-size: 0.8em
+		margin-bottom: 1em
+
+		@include respond-to(wide-screens)
+			display: inline-block
+			width: 15%
+			padding-left: 1em
+
+
+
 
 
 .header-image
@@ -161,6 +177,8 @@ section
 	@include respond-to(handhelds)
 		img:nth-child(2)
 			display: none // blendet das zweite Bild (für medium Screens) aus
+		> div
+			margin: 0 $inner-distance
 
 	@include respond-to(medium-screens)
 		margin-bottom: 2em
@@ -193,15 +211,17 @@ section
 	section
 		div
 			@include respond-to(wide-screens)
-				max-width: 70%
 				-webkit-column-count: 2
 				column-count: 2
 				-webkit-column-gap: 2.5em
 
+			@include respond-to(giant-screens)
+				max-width: $max-width-text*1.5
+
 		
 .sec-text-intro
 	> div
-		@extend .wrapper-text
+		max-width: $max-width-text
 
 
 .sonntag
@@ -267,12 +287,25 @@ section
 	width: 100%
 	margin: -5em 0
 
+
 footer
-	background-color: $background-color
-	padding: 1em $inner-distance $outside-border
+	// background-color: $background-color
+	padding: 1em $inner-distance 0
 
 	@include respond-to(medium-screens)
 		@include grid(0)
 		
 		> div
 			@include col-1-2
+
+
+
+//#############
+//### PAGES ###
+//#############
+
+
+.page-project-detail
+	@include respond-to(handhelds)
+	padding-top: 3em	 //damit es mit Navi nicht kollieidert
+
