@@ -9,6 +9,42 @@
 				Wir sind 86<span>/</span>60.<br>
 				Und bei uns gibt’s nichts doppelt.
 
-			%p Uns fällt aber immer etwas Neues ein. Erzählen Sie uns, was Sie gerne hätten: Formular und Kontaktdaten
+			%p Aber für Sie fällt uns immer etwas Neues ein.
+
+	%section
+		%h2 Schreiben Sie uns
+		%form.form-anfrage(action="/" method="post")
+			%label
+				%span Guten Tag, mein Name ist
+				%input(type="text" placeholder="Ihr Name" required)
+			%label
+				%span Sie erreichen mit unter
+				%input(type="text" placeholder="Ihren E-Mail-Adresse oder Telefonnummer" required)
+			%label
+				%span Ich möchte mit 86/60 gerne
+				%select
+					%option(value="") über ein Projekt reden.
+					%option(value="") eine Marke entwickeln.
+					%option(value="") eine Website gestalten.
+					%option(value="") einen Imagefilm produzieren.
+					%option(value="") einen Kaffe trinken.
+			%label
+				%span Mein Budget liegt
+				%select
+					%option(value="") noch nicht fest.
+					%option(value="") bei € 2.000 bis € 5.000.
+					%option(value="") bei € 5.000 bis € 10.000.
+					%option(value="") bei € 10.000 bis € 20.000.
+					%option(value="") über € 20.000.
+			%label
+				%span Ein paar Details über mein Projekt
+				%textarea(type="email" placeholder="Erzählen Sie uns das Wichtigste in ein paar Sätzen!" required)
+			%label
+				%span Ihre Telefonnummer
+				%input(type="tel" placeholder="Geben Sie Ihren Telefonnummer ein" required)
+			
+
+			%input(type="submit" value="Ab die Post")
+
 
 <!-- @include footer -->

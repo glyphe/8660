@@ -1,21 +1,39 @@
+label
+	display: block
+	margin-bottom: 1.1em
+
+	span // Der eigentliche Label-Text
+		margin-bottom: 0.2em
+
+
+.form-contact
+	label span
+		display: block		
+
 input
 	font-family: "ff-more-web-pro", "More Pro", Times, "Times New Roman", serif
-	padding: 0.4em 0.8em 0.3em
+	padding: 0.4em 0.6em 0.3em
 	border: 2px solid $brand-color-3
 	border-radius: none
+	margin-right: 0.5em
+	width: 100%
+	max-width: $max-width-text*0.75
+
+	&:focus
+		border-color: darken($brand-color-5, 20%)
+		outline: none
 
 	&[type^="email"]
 		background-color: $background-color
-
-		&:focus
-			border-color: darken($brand-color-5, 20%)
-			outline: none
 
 	&[type^="submit"]
 		border-color: $brand-color-4
 		background-color: $brand-color-4
 		transition: background 0.3s ease-in-out, border 0.3s ease-in-out
-		margin-left: 0.5em
+		width: inherit
+		padding-left: 1em
+		padding-right: 1em
+		
 
 		&:hover
 			background-color: darken($brand-color-5, 20%)
@@ -25,3 +43,7 @@ input
 		&:active
 			background-color: $brand-color-2
 			border-color: $brand-color-2
+
+textarea
+	@extend input
+	height: 8em

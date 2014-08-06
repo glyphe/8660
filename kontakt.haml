@@ -4,9 +4,36 @@
 %main
 
 	%section.sec-text-intro
-		%div
-			%h1
-				Wir sind 86<span>/</span>60.<br>
-				Und einfach zu erreichen.
+		%h1
+			Wir sind 86<span>/</span>60.<br>
+			Und einfach zu erreichen.
+
+		%p
+			%a(href="mailto:beide@8660.at") beide@8660.at<br>
+			%a(href="tel:+436608142150") +43 660 81 42 150
+
+		%p
+			Liniengasse 2b, 1060 Wien<br>
+			%a(href="") Google Maps
+
+
+
+	%section
+		%h2 Schreiben Sie uns
+		%p Wir setzen uns gerne mit Ihnen in Verbindung!
+		%form.form-contact(action="/" method="post")
+			%label
+				%span Ihr Name
+				%input(type="text" placeholder="Geben Sie Ihren Namen ein" required)
+			%label
+				%span Ihre Telefonnummer
+				%input(type="tel" placeholder="Geben Sie Ihren Telefonnummer ein" required)
+			%label
+				%span Ihre E-Mail-Adresse
+				%input(type="email" placeholder="Geben Sie Ihren E-Mail-Adresse ein" required)
+			%label
+				%span Ihre Nachricht an uns
+				%textarea(type="email" placeholder="Wobei können wir Ihnen weiterhelfen?" required)
+			%input(type="submit" value="Ab die Post")
 
 <!-- @include footer -->
