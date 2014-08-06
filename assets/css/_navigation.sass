@@ -1,15 +1,12 @@
-header:after // fixer Rahmen oben
-	content: ""
-	position: fixed
-	top: 0
-	left: 0
-	right: 0
-	border-top: $outside-border-handhelds solid $brand-color-4
-	z-index: 999
-
+header:after // fixer Rahmen oben erst ab medium Screens
 	@include respond-to(medium-screens)
-		border-top-width: $outside-border
-
+		content: ""
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		border-top: $outside-border solid $brand-color-4
+		z-index: 999
 
 header nav
 	font-size: 1.1em
@@ -48,8 +45,8 @@ header nav
 	@include respond-to(handhelds)
 		display: none  // blendet bei Handhelds Navi zuerst aus
 		background-color: $brand-color-4
-		padding-top: 2.5em // Damit Navi nicht hinter absolut positionierter nav-collapsed ist
-		margin: 0
+		padding-top: 0 // Damit Navi nicht hinter absolut positionierter nav-collapsed ist
+		margin-top: -1em
 		box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.5)
 		border-bottom: $outside-border-handhelds solid $brand-color-4
 

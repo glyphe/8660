@@ -12,11 +12,19 @@ body
 	background: $brand-color-2
 	color: #fff
 
+main
+	@include respond-to(giant-screens)
+		font-size: 1.2em // Generell größere Schrift, bei größeren Bidschirm
+
+
 h1
 	font-size: 2.2em
 	font-weight: 400
-	line-height: 1.3
+	line-height: 1.2
 	margin: 1em 0 0.5em
+	@include respond-to(handhelds)
+		font-size: 2em
+		margin-top: 0.5em
 
 	span
 		color: $brand-color-2
@@ -30,12 +38,14 @@ h2
 h3
 	font-size: 1em
 	margin: 2em 0 0.5em
+	font-weight: 500
 
 p
 	line-height: 1.7
-	margin: 0.5em 0
-
+	margin: 0.9em 0
 	max-width: $max-width-text
+	@include respond-to(handhelds)
+		line-height: 1.5
 
 
 // ##############
@@ -60,18 +70,16 @@ main
 	margin-top: 0
 
 	li
-		display: inline
-		margin: 0
+		margin: 0 0.7em 0 0
+
+		@include respond-to(medium-screens)
+			display: inline
+
+
 
 	li:before
 		content: none
 
-	li:after
-		content: " /"
-		color: $brand-color-3
-
-	li:last-child:after
-		content: none
 
 
 .credits
@@ -79,6 +87,35 @@ main
 
 	li:before
 		content: none
+
+
+// #############
+// ### PAGES ###
+// #############
+
+.page-home
+	h2
+		@include respond-to(medium-screens)
+			font-weight: 400
+			font-size: 1.5em
+
+		@include respond-to(wide-screens)
+			font-size: 1.8em
+
+		span
+			color: $brand-color-2
+
+
+.page-project-detail
+	
+	h2
+		font-size: 1.6em
+		padding-top: 3.5em // damit es nicht mit dem Up-Button kollidiert
+
+		@include respond-to(handhelds)
+			font-size: 1.4em
+			padding-top: 2.5em // damit es nicht mit dem Nav-Button kollidiert
+
 
 
 // ################
@@ -108,24 +145,6 @@ footer
 
 
 
-main
-
-
-.page-home
-	@include respond-to(giant-screens)
-		font-size: 1.2em
-
-	h2
-		@include respond-to(medium-screens)
-			font-weight: 400
-			font-size: 1.5em
-
-		@include respond-to(wide-screens)
-			font-size: 1.8em
-
-		span
-			color: $brand-color-2
-
 
 .sec-home-about
 	h2
@@ -136,16 +155,6 @@ main
 
 .sec-project-hero
 	h1
-		@include respond-to(medium-screens)
-			position: absolute
-			top: $header-height
-			left: $inner-distance
-			z-index: 200
-			height: 80px
-			width: 500px
-
-	h2
-		margin-top: 0
 		font-weight: 400
 		line-height: 1.3
 		font-size: 2em
@@ -170,15 +179,17 @@ main
 			display: block
 			font-style: italic
 			font-size: 0.6em
+			color: inherit // damit es nicht rot wird wie andere Spans in h1
+
+			@include respond-to(handhelds)
+				font-size: 0.5em
 
 
 .sec-project-descr
 	margin-top: $inner-distance
 
 
-.sec-project-details
-	h3
-		font-weight: 500
+
 
 
 .fn
