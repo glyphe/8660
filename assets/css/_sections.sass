@@ -23,19 +23,21 @@ section
 .sec-home-intro
 
 	@include respond-to(handhelds)
-		margin-bottom: 4em
+		// margin-bottom: 2em
 
 	@include respond-to(medium-screens)
-		@include behind-header
-		min-height: 95% // damit nachfolgendes Bild oben angeschnitten ist
-		background: url('home-team-top') no-repeat
-		background-size: 100%
-		background-position: bottom
-		display: -webkit-flex
+	margin-left: 0
+	margin-right: 0
+	// @include behind-header
+	// min-height: 95% // damit nachfolgendes Bild oben angeschnitten ist
+	background: url('home-team-top') no-repeat
+	background-size: 100%
+	background-position: bottom
+	display: -webkit-flex
 
-		> div
-			max-width: $max-width-text
-			margin: auto $inner-distance
+	> div
+		max-width: $max-width-text
+		margin: auto $inner-distance
 
 
 .sec-leistungen-hero
