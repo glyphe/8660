@@ -25,3 +25,22 @@
 
 	&:hover, &:active, &:focus
 		background-color: $brand-color-2
+
+.btn-website
+	@extend .btn
+
+	&:after // Icon nach Text
+		@extend .fa-css-prefix
+		content: $fa-var-external-link-square
+		margin-left: 0.5em
+
+	&:link, &:visited
+		padding: 0.5em 1em 0.4em
+		background-color: lighten($brand-color-1,30%)
+		color: #fff
+
+	&:hover
+		background-color: $brand-color-1
+
+	&:active, &:focus
+		background-color: $brand-color-2

@@ -38,6 +38,14 @@ nav
 		background-color: inherit
 
 
+.nav-light
+	@include respond-to(medium-screens)
+		a:link, a:visited
+			color: #fff
+
+		a:hover, a:active
+			color: $brand-color-2
+
 footer
 	a:link, a:visited
 		background-image: none

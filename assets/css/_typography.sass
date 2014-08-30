@@ -12,7 +12,7 @@ body
 	background: $brand-color-2
 	color: #fff
 
-main
+main, .sonntag
 	@include respond-to(giant-screens)
 		font-size: 1.2em // Generell größere Schrift, bei größeren Bidschirm
 
@@ -175,6 +175,7 @@ footer
 
 		@include respond-to(wide-screens)
 			font-size: 2.5em
+			bottom: $inner-distance*2.5
 			width: $max-width
  
 		span
