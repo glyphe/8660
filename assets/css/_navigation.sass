@@ -40,7 +40,7 @@ header nav
 			display: inline-block
 			margin-right: 0.7em
 
-			
+
 .nav-main
 	@include respond-to(handhelds)
 		display: none  // blendet bei Handhelds Navi zuerst aus
@@ -89,6 +89,15 @@ header nav
 			content: $fa-var-chevron-circle-up
 			font-size: 0.9em
 
+.project-category
+	margin: 2em $inner-distance
+
+	@extend .biografie
+	ul
+		padding: 0
+
+	li:after
+		margin-left: 0
 
 
 
