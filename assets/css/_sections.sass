@@ -54,8 +54,18 @@ section
 			max-width: 40%
 
 
+.sec-about-hero
+	@include respond-to(medium-screens)
+		@include sec-full-width
+		@include behind-header
+		background: url('ueber-uns-test-verlauf') no-repeat
+		background-size: 100%
+		background-position: bottom
 
-
+		> div
+			margin-left: $inner-distance
+			padding-top: $header-height
+			padding-bottom: $inner-distance
 
 
 .sec-project-hero
