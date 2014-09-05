@@ -4,7 +4,7 @@ $(function() {
 		// Einblenden des Menüs auf Handhelds
 		$(function() {
 			$('#nav-link').on('click', function() {
-				$('.nav-main').slideToggle();
+				$('.nav-main').fadeToggle();
 			});
 		});
 

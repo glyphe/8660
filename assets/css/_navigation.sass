@@ -43,11 +43,13 @@ header nav
 
 .nav-main
 	@include respond-to(handhelds)
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
 		display: none  // blendet bei Handhelds Navi zuerst aus
 		background-color: $brand-color-4
-		padding-top: 0 // Damit Navi nicht hinter absolut positionierter nav-collapsed ist
-		margin-top: -1em
-		box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.5)
+		padding: $nav-handhelds-height $outside-border-handhelds 0
 		border-bottom: $outside-border-handhelds solid $brand-color-4
 
 	@include respond-to(medium-screens)
@@ -57,7 +59,6 @@ header nav
 	@include respond-to(medium-screens)
 		display: none
 		top: $outside-border
-		// background-color: rgba($background-color,0.3)
 
 	@include respond-to(handhelds)
 		position: fixed // Fixe Position bei Handhelds für den Menü-Button
@@ -80,19 +81,23 @@ header nav
 
 	a:after	// Symbol nach dem Logo
 		@extend .fa-css-prefix
-		margin-left: 0.4em
+		font-size: 0.9em
 
 		@include respond-to(handhelds)
 			content: $fa-var-bars
+			margin-left: 0.2em
 
 		@include respond-to(medium-screens)
 			content: $fa-var-chevron-circle-up
-			font-size: 0.9em
+			margin-left: 0.4em
 
 .project-category
+	@extend .biografie
 	margin: 2em $inner-distance
 
-	@extend .biografie
+	@include respond-to(handhelds)
+		margin: 1em $inner-distance -1em
+
 	ul
 		padding: 0
 

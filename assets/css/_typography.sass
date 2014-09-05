@@ -18,7 +18,7 @@ main, .sonntag
 
 
 h1
-	font-size: 2.2em
+	font-size: 2.1em
 	font-weight: 400
 	line-height: 1.2
 	margin: 1em 0 0.5em
@@ -34,6 +34,10 @@ h2
 	line-height: 1.4
 	font-weight: 500
 	margin: 2.5em 0 0.5em
+	@include respond-to(handhelds)
+		font-size: 1.2em
+		margin-top: 2em
+		margin-bottom: 0
 
 h3
 	font-size: 1em
@@ -108,7 +112,8 @@ main
 		&:last-child:after
 			content: none
 
-
+.kunden
+	@extend .biografie
 
 .credits
 	padding: 0
@@ -175,11 +180,17 @@ footer
 
 .sec-intro
 	p
-		font-size: 1.15em
-		margin-top: 2em
 		margin-bottom: 3em
 
+		@include respond-to(medium-screens)
+			font-size: 1.15em
+			margin-top: 2em
+
 .sec-project-hero
+	h1.light
+		@include respond-to(medium-screens)
+			@include text-on-img
+
 	h1
 		font-weight: 400
 		line-height: 1.3
@@ -190,7 +201,6 @@ footer
 			font-size: 1.7em
 
 		@include respond-to(medium-screens)
-			@include text-on-img
 			position: absolute
 			bottom: $inner-distance
 			left: $inner-distance
