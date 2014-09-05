@@ -3,17 +3,27 @@
 
 %main
 
-	%section.sec-text-intro
+	%section.sec-intro
 		%h1
 			Wir sind 86<span>/</span>60.<br>
 			Und einfach zu erreichen.
 
 		%p
-			%a(href="mailto:beide@8660.at") beide@8660.at<br>
-			%a(href="tel:+436608142150") +43 660 81 42 150
-
+			%a(href="mailto:beide@8660.at") beide@8660.at
+			&nbsp;&nbsp;
+			%a(href="tel:+436608142150") +43 660 81 42 150 
 		%p
-			Liniengasse 2b, 1060 Wien<br>
-			%a(href="") Google Maps
+			Liniengasse 2b, 1060 Wien
+			%a(href="") Maps
+
+		%form.form-newsletter(action="http://8660.us8.list-manage1.com/subscribe/post?u=727c8d8ed83edc6f76b3d5e55&amp;id=c2db0976b9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate)
+			
+			#mce-responses.clear
+			<div style="position: absolute; left: -5000px;"><input type="text" name="b_727c8d8ed83edc6f76b3d5e55_c2db0976b9" tabindex="-1" value=""></div>
+
+			.mc-field-group
+				%input(type="email" value="" name="EMAIL" placeholder="Ihre E-Mail Adresse" class="required email" id="mce-EMAIL")
+			
+				%input(type="submit" value="Newsletter bestellen" name="subscribe" id="mc-embedded-subscribe" class="button")
 
 <!-- @include footer -->

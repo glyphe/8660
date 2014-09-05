@@ -10,7 +10,15 @@ label
 	label span
 		display: block
 
-.form-anfrage
+.form-newsletter
+	margin-top: 1em
+
+	input
+		max-width: 18em
+		@include respond-to(handhelds)
+			max-width: 100%
+		
+
 
 input
 	font-family: "ff-more-web-pro", "More Pro", Times, "Times New Roman", serif
@@ -20,6 +28,7 @@ input
 	-webkit-border-radius: 0
 	border-radius: 0
 	margin-right: 0.5em
+	margin-bottom: 0.5em
 	width: 100%
 	max-width: $max-width-text*0.75
 
@@ -37,7 +46,6 @@ input
 		width: inherit
 		padding-left: 1em
 		padding-right: 1em
-		
 
 		&:hover
 			background-color: darken($brand-color-5, 20%)

@@ -21,20 +21,28 @@ section
 	padding: 2em
 
 
-.sec-home-intro
-
-	@include respond-to(medium-screens)
+.sec-hero
 	margin-left: 0
 	margin-right: 0
-	// @include behind-header
-	// min-height: 95% // damit nachfolgendes Bild oben angeschnitten ist
-	background: url('home-team-top') no-repeat
-	background-size: 100%
-	background-position: bottom
-	display: -webkit-flex
 
-	> div
-		margin: auto $inner-distance
+	// background: url('home-team-top') no-repeat
+	// background-size: 100%
+	// background-position: bottom
+	// display: -webkit-flex
+
+	@include respond-to(handhelds)
+		display: -webkit-flex
+		-webkit-flex-direction: column
+		
+		>div:nth-child(2)
+			-webkit-order: 3
+		>div:last-child(3)
+			-webkit-order: 2
+
+.hero-text
+	margin: auto $inner-distance
+	position: relative
+	z-index: 100
 
 
 .sec-leistungen-hero
@@ -96,6 +104,8 @@ section
 	@include grid(2em)
 	padding-left: $inner-distance // damit sich Margins nicht addieren und der Raster passt
 	padding-right: $inner-distance // damit sich Margins nicht addieren und der Raster passt
+	margin-top: 0
+	margin-bottom: 0
 
 	> div
 		@include col-1-1
@@ -158,6 +168,10 @@ section
 .sec-home-new-project
 	margin-top: 5em
 	margin-bottom: 5em
+	@include respond-to(handhelds)
+		margin-top: 2em
+		margin-bottom: 2em
+
 	> div
 		@extend .portfolio-grid
 
@@ -203,10 +217,14 @@ section
 			@include col-1-2
 
 
-.header-image
+.hero-image
+	margin: -20% 0 0 0
+	position: relative
+	z-index: 0
 	@include img-full-width
 
 	@include respond-to(handhelds)
+		margin-top: -30%
 		img:nth-child(2)
 			display: none // blendet das zweite Bild (für medium Screens) aus
 		> div
