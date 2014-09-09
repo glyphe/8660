@@ -11,29 +11,20 @@
 
 %main.page-home
 
-	%section.sec-home-intro
-		.div
+	%section.sec-hero
+		.hero-text
 			%h1
 				Wir sind 86<span>/</span>60.<br>
 				Freunde gepflegter Kommunikation.
-
+		.hero-text
 			%p
-				Wer mit uns arbeitet, fühlt sich bald gestärkt. Bekommt ein einzigartiges Profil und wird in einer sehr bunten, lauten Welt erkannt und wahrgenommen. Dafür gestalten wir Begegnungen mit Ihnen, Ihrem Unternehmen oder Ihrer Marke einfach, beeindruckend und anziehend.
-				%a(href="<!-- @path ueber_uns -->") Lernen Sie uns kennen
-
-
-	.sec-home-about
-		%div.header-image
+				Wer mit uns arbeitet, fühlt sich bald gestärkt. Bekommt ein einzigartiges Profil und wird in einer bunten, lauten Welt erkannt und wahrgenommen. Dafür gestalten wir Begegnungen mit Ihnen, Ihrem Unternehmen oder Ihrer Marke. Einfach, beeindruckend und anziehend.
+				%a(href="<!-- @path leistungen -->") Was wir für Sie tun können
+		.hero-image
 			%img(src="<!-- @path home-team-handhelds -->")
+			%img(src="<!-- @path home-team-medium -->")
 			%img(src="<!-- @path home-team -->")
 				
-
-		%section
-			%h2 Oliver Schöndorfer <span>/</span> Michael Holzer
-			%p
-				Wir ergänzen einander perfekt. Unsere Persönlichkeiten, gebündelten Erfahrungen und Kenntnisse ergeben eine Fülle an Möglichkeiten für verschiedenste Kunden. Wir sind extrem neugierig, was wir für Sie tun können. Welche Probleme wir für Sie lösen dürfen. Und wie wir es auch Ihren Kunden leicht machen werden, Sie ins Herz zu schließen.
-				%a(href="<!-- @path leistungen -->") Was wir für Sie tun können
-
 	.sec-home-new-project
 		%section
 			%h2 Unser jüngster Streich
@@ -47,7 +38,7 @@
 							.thumb-title
 								wild degrees
 							.thumb-subtitle
-								Branding / Fotoshooting / Flyer & Plakat
+								Schräges Design für schräge Möbel
 			%div
 				%a(href="<!-- @path projekt-teichgraeber -->")
 					.thumb-box
@@ -56,15 +47,20 @@
 							.thumb-title
 								Teichgräber
 							.thumb-subtitle
-								Branding / Mailing / Website / Fotoshooting / Film
-
-
+								Rebranding
 
 	%section
 		%h2 Interessiert am Kennenlernen?
-		%p Eine Tasse Kaffee mit uns verpflichtet Sie zu nichts.<br> Rufen Sie einfach an: <a href="tel:+436608142150">+43 660 81 42 150</a>.
+		%p
+			Eine Tasse Kaffee mit uns verpflichtet Sie zu nichts.<br>Rufen Sie einfach an:
+			%a(href="tel:+436608142150")
+				%span +43 660 81 42 150
 
-		%form(action="http://8660.us8.list-manage1.com/subscribe/post?u=727c8d8ed83edc6f76b3d5e55&amp;id=c2db0976b9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate)
+
+	%section
+		%h2 Bleiben Sie auf dem Laufenden
+		
+		%form.form-newsletter(action="http://8660.us8.list-manage1.com/subscribe/post?u=727c8d8ed83edc6f76b3d5e55&amp;id=c2db0976b9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate)
 			
 			#mce-responses.clear
 			<div style="position: absolute; left: -5000px;"><input type="text" name="b_727c8d8ed83edc6f76b3d5e55_c2db0976b9" tabindex="-1" value=""></div>

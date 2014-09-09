@@ -322,13 +322,14 @@ section
 	right: 0
 	z-index: 2000
 	padding: $inner-distance
-	padding-top: $inner-distance*2
+	padding-top: $header-height
 	background-color: rgba($brand-color-4, 0.97)
 	border-style: solid
 	border-color: $background-color
 
 	@include respond-to(handhelds)
 		border-width: $outside-border-handhelds
+		padding-top: $nav-handhelds-height
 	
 	@include respond-to(medium-screens)
 		border-width: $outside-border
