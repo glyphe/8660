@@ -157,6 +157,20 @@ section
 	transition: background-color 0.5s ease-out
 
 
+.thumb-start-project
+	background: darken($brand-color-2, 5%)
+	transition: background 0.3s ease-out 0.2s
+
+	img
+		-webkit-filter: none
+
+	.thumb-title, .thumb-subtitle
+		text-shadow: none
+		transition: color 0.5s ease-out
+
+	&:hover
+		background: $brand-color-2
+
 
 
 .sec-home-new-project
@@ -197,6 +211,8 @@ section
 			width: 20%
 			padding-left: 1em
 
+.sec-next
+	margin-top: $inner-distance
 
 .two-img
 	@include img-full-width

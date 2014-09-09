@@ -12,7 +12,8 @@
 	%section
 		%form.form-anfrage(action="/" method="post")
 			%div
-				%span Sie hätten gerne<br>
+				%label
+					%span Was können wir für Sie tun?
 				%input(type="checkbox" id="branding")
 				%label.label-checkbox(for="branding") Branding<br>
 				%input(type="checkbox" id="web")
@@ -26,10 +27,10 @@
 				%input(type="checkbox" id="objekt")
 				%label.label-checkbox(for="objekt")  Objektdesign<br>
 				%input(type="checkbox" id="else")
-				%label.label-checkbox(for="else") etwas anderes<br><br>
+				%label.label-checkbox(for="else") etwas anderes
 
 			%label
-				%span Ihr Budget liegt
+				%span Ihr Budget liegt:
 				%select
 					%option(value="") noch nicht fest.
 					%option(value="") bei € 2.000 bis € 5.000.
@@ -44,13 +45,13 @@
 
 
 			%label
-				%span Ihr Name
+				%span Ihr Name:
 				%input(type="text" placeholder="" required)
 			%label
-				%span Ihre Telefonnummer
+				%span Ihre Telefonnummer:
 				%input(type="tel" placeholder="" required)
 			%label
-				%span Ihre E-Mail-Adresse
+				%span Ihre E-Mail-Adresse:
 				%input(type="email" placeholder="" required)
 
 
