@@ -1,12 +1,18 @@
 header:after // fixer Rahmen oben erst ab medium Screens
-	@include respond-to(medium-screens)
-		content: ""
-		position: fixed
-		top: 0
-		left: 0
-		right: 0
-		border-top: $outside-border solid $brand-color-4
-		z-index: 999
+	content: ""
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	border-top: $outside-border solid $brand-color-4
+	z-index: 999
+
+	@include respond-to(handhelds)
+		border-top-width: $outside-border-handhelds
+
+	@media only screen and (max-height: 450px)
+		border-top-width: 0 // blednet border-top aus, wenn screen unter 400px hoch ist
+
 
 header nav
 	font-size: 1.1em
@@ -51,6 +57,7 @@ header nav
 		background-color: $brand-color-4
 		padding: $nav-handhelds-height $outside-border-handhelds 0
 		border-bottom: $outside-border-handhelds solid $brand-color-4
+		z-index: 800
 
 	@include respond-to(medium-screens)
 		position: absolute
@@ -91,12 +98,25 @@ header nav
 			content: $fa-var-chevron-circle-up
 			margin-left: 0.4em
 
+.nav-handhelds
+	@include respond-to(handhelds)
+		left: 0
+		right: 0
+		top: 0
+		background-color: $brand-color-4
+		height: 55px
+
+		a, a:hover
+			margin-left: 0
+			padding-top: $outside-border-handhelds
+
+
 .project-category
 	@extend .biografie
 	margin: 2em $inner-distance
 
 	@include respond-to(handhelds)
-		margin: 1em $inner-distance -1em
+		margin: 1em $inner-distance 0.5em
 
 	ul
 		padding: 0

@@ -1,21 +1,24 @@
 <!-- @include header -->
 <!-- @include nav -->
 
-%main
+%main.page-kontakt
 
 	%section.sec-intro
 		%h1
 			Wir sind 86<span>/</span>60.<br>
 			Und einfach zu erreichen.
-
 		%p
-			%a(href="mailto:beide@8660.at") beide@8660.at
+			Liniengasse 2b, 1060 Wien<br>
+			%a(href="mailto:beide@8660.at") beide@8660.at 
 			&nbsp;&nbsp;
-			%a(href="tel:+436608142150") +43 660 81 42 150 
-		%p
-			Liniengasse 2b, 1060 Wien
-			%a(href="") Maps
+			%a(href="tel:+436608142150")
+				%span +43 660 81 42 150 
 
+
+		/ %a.btn(href="<!-- @path anfrage -->#") Projekt starten
+
+	%section
+		%h2 Newsletter
 		%form.form-newsletter(action="http://8660.us8.list-manage1.com/subscribe/post?u=727c8d8ed83edc6f76b3d5e55&amp;id=c2db0976b9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate)
 			
 			#mce-responses.clear

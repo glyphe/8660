@@ -6,6 +6,9 @@ label
 		margin-bottom: 0.2em
 		display: block	
 
+.label-checkbox
+	display: inline
+
 .form-contact
 	label span
 		display: block
@@ -38,6 +41,11 @@ input
 
 	&[type^="email"]
 		background-color: $background-color
+
+	&[type^="checkbox"]
+		width: 1em
+		height: 1em
+		margin-bottom: 0
 
 	&[type^="submit"]
 		border-color: $brand-color-4

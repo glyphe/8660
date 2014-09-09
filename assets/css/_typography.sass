@@ -49,7 +49,7 @@ p
 	margin: 0.9em 0
 	max-width: $max-width-text
 	@include respond-to(handhelds)
-		line-height: 1.5
+		line-height: 1.6
 
 
 // ##############
@@ -71,13 +71,13 @@ main
 
 .werte
 	padding: 0
-	margin: 3em 0 6em
 
 	li:before
 		content: none
 
 	span
 		color: $brand-color-2
+
 
 
 .leistungen
@@ -96,7 +96,8 @@ main
 
 .biografie
 	padding: 0
-	margin-top: 0
+	margin-top: 0.5em
+	line-height: 1.6
 
 	li
 		display: inline
@@ -130,7 +131,7 @@ main
 	h2
 		@include respond-to(medium-screens)
 			font-weight: 400
-			font-size: 1.5em
+			font-size: 	2.1em
 
 		@include respond-to(wide-screens)
 			font-size: 1.8em
@@ -149,6 +150,11 @@ main
 			font-size: 1.4em
 			padding-top: 2.5em // damit es nicht mit dem Nav-Button kollidiert
 
+.page-kontakt
+	p
+		font-size: 1.5em
+		@include respond-to(handhelds)
+			font-size: 1.2em
 
 
 // ################
@@ -169,10 +175,10 @@ footer
 		display: inline-block
 		margin-right: 0.5em
 
-		&:last-child
-			margin-right: 0
+	.nav-footer-right
+		@include respond-to(handhelds)
+			font-size: 1.1em
 
-	nav
 		@include respond-to(medium-screens)
 			text-align: right
 
@@ -214,9 +220,10 @@ footer
  
 		span
 			display: block
-			font-style: italic
-			font-size: 0.6em
+			font-size: 0.5em
 			color: inherit // damit es nicht rot wird wie andere Spans in h1
+			@include respond-to(handhelds)
+			font-size: 0.6em
 
 
 .sec-project-descr

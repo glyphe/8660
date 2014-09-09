@@ -42,7 +42,7 @@ section
 .hero-text
 	margin: auto $inner-distance
 	position: relative
-	z-index: 100
+	z-index: 10
 
 
 .sec-leistungen-hero
@@ -127,13 +127,6 @@ section
 			-webkit-filter: grayscale(0) contrast(1)
 			-webkit-transform: scale(1.07)
 
-		.thumb-subtitle
-			background-color: $background-color
-
-		.thumb-title
-			@include text-on-img
-
-
 .thumb-text
 	margin: 0 1em 0 0
 	position: absolute
@@ -156,10 +149,11 @@ section
 .thumb-subtitle
 	display: inline-block
 	margin: 0.2em 0 0 0
-	padding: 0.2em 0.6em 0.1em	
-	font-size: 0.8em
-	color: $brand-color-1
-	background-color: rgba($background-color, 0.7)
+	text-shadow: 1px 1px 1px rgba($brand-color-1, 0.9) // Feinerer Schatten für Vorschaubild
+	// padding: 0.2em 0.6em 0.1em	
+	font-size: 0.9em
+	color: #fff
+	// background-color: rgba($background-color, 0.7)
 	transition: background-color 0.5s ease-out
 
 
@@ -225,8 +219,13 @@ section
 
 	@include respond-to(handhelds)
 		margin-top: -30%
-		img:nth-child(2)
-			display: none // blendet das zweite Bild (für medium Screens) aus
+
+		img // blendet Bilder ein und aus
+			&:nth-child(2)
+				display: none
+			&:nth-child(3)
+				display: none
+			
 		> div
 			margin: 0 $inner-distance
 
@@ -234,8 +233,11 @@ section
 		margin-bottom: 2em
 		position: relative
 
-		img:first-child
-			display: none // blendet das erste Bild (für Handhelds) aus
+		img // blendet Bilder ein und aus
+			&:nth-child(1)
+				display: none
+			&:nth-child(3)
+				display: none
 
 		> div
 			position: absolute
@@ -243,30 +245,68 @@ section
 			bottom: $inner-distance
 			width: 100%-$inner-distance
 
+	@include respond-to(wide-screens)
+		img // blendet Bilder ein und aus
+			&:nth-child(1)
+				display: none
+			&:nth-child(2)
+				display: none
+			&:nth-child(3)
+				display: inherit
+
+.sec-about-us-hero
+	margin-bottom: 2em
+
+	@include respond-to(wide-screens)
+		border-bottom: $outside-border solid $brand-color-4
+		margin-bottom: 0
+
+	.hero-image
+		margin-bottom: 0
+
+	
+
+
 
 .sec-about-us
-	margin-bottom: 6em
+	@include respond-to(wide-screens)
+		border-bottom: $outside-border solid $brand-color-4
+
+	@include respond-to(handhelds)
+		margin-bottom: 3em
 
 	header
-		@include img-full-width
+		margin-left: $inner-distance
+		margin-right: $inner-distance
 
-		@include respond-to(medium-screens)
+		@include img-full-width
+			
+		img
+			display: block
+			margin-bottom: -1em
+
+			&:nth-child(2)
+				display: none // blendet das zweite Bild (für medium Screens) aus
+
+		@include respond-to(wide-screens)
+			margin-left: 0
+			margin-right: 0
 			position: relative
+
+			img
+				margin-bottom: 0
+
+				&:first-child
+					display: none // blendet das erste Bild (für Handhelds) aus
+				&:nth-child(2)
+					display: inherit
 
 			> div
 				position: absolute
 				left: $inner-distance
 				top: $inner-distance
 				width: 50%-$inner-distance
-	section
-		div
-			@include respond-to(wide-screens)
-				-webkit-column-count: 2
-				column-count: 2
-				-webkit-column-gap: 2.5em
 
-			@include respond-to(giant-screens)
-				max-width: $max-width-text*1.5
 
 		
 .sec-text-intro
@@ -343,6 +383,9 @@ footer
 
 	@include respond-to(handhelds)
 		padding-bottom: 1em
+
+		> div
+			display: inline-block
 
 	@include respond-to(medium-screens)
 		@include grid(0)
