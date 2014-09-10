@@ -76,19 +76,25 @@ header nav
 		padding: 0 0 $outside-border-handhelds 0
 		height: 45px
 
-	a, a:hover
+	a:link, a:visited
 		display: inline-block
 		margin: -0.2em -0.5em -0.3em 0
 		padding: 0.1em 0.5em 0em
-		background-color: rgba($brand-color-4,0.95)
+		background-color: rgba($brand-color-4,0.9)
 
 		@include respond-to(handhelds)
 			margin-left: -0.5em // Damit der Button weiter links ist am Handy
 
+	a:hover
+		background-color: $brand-color-4
+
+		&:after
+			color: $brand-color-2
 
 	a:after	// Symbol nach dem Logo
 		@extend .fa-css-prefix
 		font-size: 0.9em
+		transition: color 0.2s ease-in-out
 
 		@include respond-to(handhelds)
 			content: $fa-var-bars
