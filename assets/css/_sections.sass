@@ -318,9 +318,17 @@ section
 
 			> div
 				position: absolute
-				left: $inner-distance
+				// left: $inner-distance
+				left: 0
 				top: 0
-				width: 60%-$inner-distance
+				bottom: 0
+				right: 0
+				display: -webkit-flex
+				display: flex
+
+				> div
+					margin: auto 0 auto $inner-distance
+					width: 60%-$inner-distance
 
 
 		
