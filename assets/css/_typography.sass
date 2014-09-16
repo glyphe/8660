@@ -240,3 +240,14 @@ footer
 	font-style: italic
 
 
+.article-blog
+	h2
+		@extend h1
+		margin-bottom: 0
+
+		@include respond-to(medium-screens)
+			max-width: 20em
+
+	p
+		margin-top: 0
+
